@@ -1,0 +1,27 @@
+NOTICE
+======
+
+Symbiote — https://github.com/drsamonline/app-symbiote
+Copyright 2026 Dr Sohil Momin. Licensed under PolyForm Noncommercial 1.0.0 (see LICENSE).
+
+Third-party components
+----------------------
+
+None. Symbiote has no third-party dependency and no CDN.
+
+Vendored from this project's own kits (same licence, same author), copied verbatim on 26/11/2026:
+
+- web-kit 0.1.0 — docs/play/web-kit.js — the offline shell, storage helpers and PWA registration
+- export-kit 1.0.0 — docs/play/export-kit.js — Blob download, used for the ledger export
+
+Neither kit is modified. Neither makes a network request.
+
+No model
+--------
+
+There is no language model, no endpoint and no key in this app. An answer is assembled from ledger entries
+with fixed phrasings, and every line carries the date of the entry it came from. When the ledger has nothing
+to cite, the answer says so rather than producing a sentence that sounds like a memory.
+
+That is the whole design: a companion whose memory is a ledger you can read, and whose answers you can check
+by reading it.

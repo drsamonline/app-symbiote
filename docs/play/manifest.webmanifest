@@ -1,0 +1,11 @@
+{
+  "name": "Symbiote — a companion that cites the ledger",
+  "short_name": "Symbiote",
+  "description": "A companion that remembers the favours between you and answers by citing the entry and its date.",
+  "start_url": "./index.html", "scope": "./", "display": "standalone",
+  "background_color": "#f6f5f2", "theme_color": "#1f2a24", "lang": "en-IN",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

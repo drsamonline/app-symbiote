@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symbiote — a companion that cites the ledger</title>
+<meta name="description" content="A companion that remembers the favours between you and answers by citing the entry and its date.">
+<meta name="theme-color" content="#1f2a24">
+<style>
+  :root{--bg:#f6f5f2;--panel:#fff;--ink:#1f2a24;--muted:#5d6a62;--line:#d9d6cf;--accent:#2f6b5f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+  main{max-width:760px;margin:0 auto;padding:50px 20px 64px}
+  h1{font-size:33px;line-height:1.15;letter-spacing:-.02em;margin:0 0 10px}
+  .lede{font-size:18px;color:var(--muted);margin:0 0 26px}
+  .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:9px}
+  .status{margin:26px 0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:9px;background:var(--panel);font-size:14px}
+  .status b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:4px}
+  h2{font-size:17px;margin:30px 0 8px}
+  ul{padding-left:20px}li{margin:4px 0}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:#eeede9;padding:1px 5px;border-radius:4px}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+  th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px 8px;vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+  .say{margin:22px 0;padding:14px 16px;border:1px solid #c9ded8;border-left:4px solid var(--accent);border-radius:9px;background:#f1f8f6;font-size:14px;color:#1d4a41}
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+  a{color:var(--accent)}
+</style></head>
+<body><main>
+  <h1>Symbiote</h1>
+  <p class="lede">A companion that remembers the favours between you — and answers by <strong>citing the entry and its date</strong>.</p>
+  <a class="cta" href="play/index.html">Open Symbiote</a>
+
+  <p class="say">“Settled on 22/11/2026: lent me his drill (owed by me, Ravi). — from 1 ledger entry.”</p>
+
+  <div class="status">
+    <b>Status</b>
+    Built and working: favours recorded in both directions with a date; settling moves an entry to settled with the date it settled; an answer that is assembled from entries and cites each one's date; totals that add up; and a refusal to invent a favour when the ledger has nothing.
+    <br><b>Release</b>: Windows EXE, Android APK and Linux binary, built from this source in CI — <a href="https://github.com/drsamonline/app-symbiote/releases/tag/app-latest">app-latest</a>.
+    <br><b>Not built</b>: a language model. There is none, and the answers are assembled from the ledger with fixed phrasings — which is why the app can always show its work.
+  </div>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Records a favour — owed by you or owed to you — with a date.</li>
+    <li>Settles an entry, and keeps it: a settled entry is not deleted, because the citation has to survive.</li>
+    <li>Answers a question by citing the entries it used, with their dates.</li>
+    <li>Refuses to answer about someone the ledger does not know, rather than inventing a favour.</li>
+  </ul>
+
+  <h2>What it will not do</h2>
+  <ul>
+    <li><strong>Invent a favour.</strong> With nothing to cite, it says so.</li>
+    <li><strong>Answer without a citation.</strong> Every line names its entry's date.</li>
+    <li><strong>Use a model.</strong> No endpoint, no key, no completion.</li>
+    <li><strong>Delete a settled entry</strong> — the ledger is the memory.</li>
+    <li><strong>Use the internet.</strong> No <code>fetch</code>, no endpoint; CSP <code>connect-src 'none'</code>.</li>
+  </ul>
+
+  <h2>When things go wrong</h2>
+  <table>
+    <tr><th>Case</th><th>What happens</th></tr>
+    <tr><td>Bad input</td><td>No person, no words, a nonsense direction, an empty question, settling an entry that is not there or is already settled — each refused with the field named.</td></tr>
+    <tr><td>Nothing to cite</td><td>The answer says the ledger has nothing, and that it will not make one up.</td></tr>
+    <tr><td>No network</td><td>Nothing changes; the ledger is on the device.</td></tr>
+    <tr><td>Storage full or unavailable</td><td><strong>NOT SAVED</strong>, and the ledger on screen is unchanged.</td></tr>
+    <tr><td>Corrupt saved state</td><td>Reported and offered for export; never replaced with an empty one — that looks like nobody owes anybody anything.</td></tr>
+  </table>
+
+  <h2>How to run it</h2>
+  <ul>
+    <li><strong>Here</strong>: <a href="play/index.html">play/index.html</a>, or install it from your browser's menu.</li>
+    <li><strong>Offline file</strong>: open <code>docs/play/index.html</code> straight from disk.</li>
+    <li><strong>Tests</strong>: <code>node tests/self-tests.js</code>.</li>
+  </ul>
+
+  <footer>PolyForm Noncommercial 1.0.0 · (c) 2026 Dr Sohil Momin · <a href="https://github.com/drsamonline/app-symbiote">source</a></footer>
+</main></body></html>
