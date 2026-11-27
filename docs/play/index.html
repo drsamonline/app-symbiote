@@ -42,6 +42,27 @@
   .totals{font-family:var(--mono);font-size:22px;font-weight:700}
   footer{max-width:860px;margin:0 auto;padding:18px 20px 40px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
   [hidden]{display:none !important}
+
+  body{background:#ece6db;color:#241f1a;font-family:Georgia,serif}
+  header.top{background:#f6f2ea;border-bottom:4px double #241f1a}
+  header.top h1{font-weight:700;letter-spacing:-.02em}
+  header.top a{color:#8e3b2f}
+  main{background:#f6f2ea;max-width:880px}
+  .card{background:#f6f2ea;border:1px solid #d8cfc0;border-radius:0}
+  .card h2{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.18em;
+           text-transform:uppercase;color:#8e3b2f}
+  .card p.claim{color:#6f655a;font-style:italic}
+  button{border-radius:0;border-color:#241f1a;background:#f6f2ea}
+  button.primary{background:#241f1a;border-color:#241f1a;color:#f6f2ea}
+  input[type=text]{background:#fffdf8;border-color:#d8cfc0;border-radius:0;font-family:Georgia,serif}
+  .answer{background:#fffdf8;border-color:#d8cfc0;border-left-color:#8e3b2f;font-family:Georgia,serif}
+  ul.list li{background:#fffdf8;border-color:#d8cfc0;border-left-color:#8e3b2f;border-radius:0}
+  ul.list li.settled{opacity:.6}
+  .totals{font-family:ui-monospace,monospace;color:#8e3b2f}
+  .status.ok{border-color:#c8bfae;background:#f8f4ec;color:#3f3a32}
+  .status.bad{border-color:#d8bcae;background:#fbeee7;color:#8a4222}
+  .sponsor{margin:22px 0 0;border-top:1px solid #d8cfc0;padding-top:12px;font-family:ui-monospace,monospace;font-size:11px;color:#6f655a}
+  .sponsor a{color:#8e3b2f;text-decoration:none;border-bottom:1px solid currentColor}
 </style>
 </head>
 <body>
@@ -87,6 +108,10 @@
     <span class="hint" id="ioNote"></span>
   </div>
 
+  <div class="sponsor">
+    <strong>Sponsor this app.</strong> Free, offline, no account. If it earned its keep:
+    <a href="https://github.com/sponsors/drsamonline">github.com/sponsors/drsamonline</a>
+  </div>
   <footer>
     Symbiote answers only from its ledger, and every answer cites the entry's date. There is no language model here: the sentences are assembled, which is why
     the app can always show its work — and why it will not invent a favour.
